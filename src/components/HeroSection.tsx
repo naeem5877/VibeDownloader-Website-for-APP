@@ -105,7 +105,7 @@ const HeroSection = () => {
               {/* Main app image with enhanced styling */}
               <div className="relative z-10 p-2 bg-gradient-to-br from-vibeSecondary/20 to-vibeAccent/20 rounded-3xl backdrop-blur-sm">
                 <img 
-                  src="/lovable-uploads/aec33016-fa83-47ec-a9f0-60c75069e332.png" 
+                  src="/images/aec33016-fa83-47ec-a9f0-60c75069e332.png" 
                   alt="VibeDownloader App Interface" 
                   className="w-72 h-auto rounded-2xl perspective-tilt hover-lift shadow-premium transition-all duration-300 transform hover:scale-105"
                 />
