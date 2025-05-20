@@ -4,8 +4,8 @@ import React from "react";
 const platforms = [
   {
     name: "YouTube",
-    icon: "https://cdn-icons-png.flaticon.com/512/1384/1384060.png",
-    color: "#FF0000",
+    icon: "https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png",
+    color: "#333333",
     features: [
       "Download videos in 8K, 4K, 1080p, 720p",
       "Extract audio in MP3 format",
@@ -14,8 +14,8 @@ const platforms = [
   },
   {
     name: "Instagram",
-    icon: "https://cdn-icons-png.flaticon.com/512/174/174855.png",
-    color: "#E1306C",
+    icon: "https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg",
+    color: "#333333",
     features: [
       "Download reels and videos",
       "Save stories and IGTV content",
@@ -24,8 +24,8 @@ const platforms = [
   },
   {
     name: "TikTok",
-    icon: "https://cdn-icons-png.flaticon.com/512/3046/3046121.png",
-    color: "#000000",
+    icon: "https://upload.wikimedia.org/wikipedia/en/a/a9/TikTok_logo.svg",
+    color: "#333333",
     features: [
       "Download TikToks without watermark",
       "Save videos in highest quality",
@@ -34,8 +34,8 @@ const platforms = [
   },
   {
     name: "Facebook",
-    icon: "https://cdn-icons-png.flaticon.com/512/124/124010.png",
-    color: "#1877F2",
+    icon: "https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png",
+    color: "#333333",
     features: [
       "Download public and private videos",
       "Save Facebook reels and stories",
@@ -44,8 +44,8 @@ const platforms = [
   },
   {
     name: "Spotify",
-    icon: "https://cdn-icons-png.flaticon.com/512/5968/5968819.png",
-    color: "#1DB954",
+    icon: "https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg",
+    color: "#333333",
     features: [
       "Download podcast episodes",
       "Save album covers in HD",
@@ -54,8 +54,8 @@ const platforms = [
   },
   {
     name: "X (Twitter)",
-    icon: "https://cdn-icons-png.flaticon.com/512/2504/2504947.png",
-    color: "#1DA1F2",
+    icon: "https://upload.wikimedia.org/wikipedia/commons/5/57/X_logo_2023.svg",
+    color: "#333333",
     features: [
       "Download tweets with videos",
       "Save spaces recordings",
@@ -66,11 +66,11 @@ const platforms = [
 
 const PlatformsSection = () => {
   return (
-    <section id="platforms" className="py-20 bg-gray-50">
+    <section id="platforms" className="py-20 bg-vibePrimary">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gradient">Supported Platforms</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-vibeSecondary/80 max-w-2xl mx-auto">
             Download content from all major social media platforms with ease
           </p>
         </div>
@@ -79,25 +79,27 @@ const PlatformsSection = () => {
           {platforms.map((platform, index) => (
             <div 
               key={index} 
-              className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300"
+              className="bg-vibeDark rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-vibeSecondary/20"
             >
               <div 
-                className="h-2" 
+                className="h-1" 
                 style={{ backgroundColor: platform.color }}
               ></div>
               <div className="p-6">
                 <div className="flex items-center mb-4">
-                  <img 
-                    src={platform.icon} 
-                    alt={platform.name} 
-                    className="w-10 h-10 mr-4" 
-                  />
-                  <h3 className="text-xl font-bold">{platform.name}</h3>
+                  <div className="w-10 h-10 bg-vibeSecondary/10 rounded-full flex items-center justify-center mr-4">
+                    <img 
+                      src={platform.icon} 
+                      alt={platform.name} 
+                      className="w-6 h-6 invert" 
+                    />
+                  </div>
+                  <h3 className="text-xl font-bold text-vibeSecondary">{platform.name}</h3>
                 </div>
                 <ul className="space-y-2">
                   {platform.features.map((feature, i) => (
-                    <li key={i} className="flex items-center text-gray-600">
-                      <span className="mr-2 text-green-500">✓</span>
+                    <li key={i} className="flex items-center text-vibeSecondary/70">
+                      <span className="mr-2 text-vibeSecondary">✓</span>
                       {feature}
                     </li>
                   ))}

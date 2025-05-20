@@ -36,11 +36,11 @@ const faqs = [
 
 const FaqSection = () => {
   return (
-    <section id="faq" className="py-20">
+    <section id="faq" className="py-20 bg-vibePrimary">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gradient">Frequently Asked Questions</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-vibeSecondary/80 max-w-2xl mx-auto">
             Got questions? We've got answers. Here are some of the most common questions about VibeDownloader.
           </p>
         </div>
@@ -48,9 +48,9 @@ const FaqSection = () => {
         <div className="max-w-3xl mx-auto">
           <Accordion type="single" collapsible className="w-full">
             {faqs.map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`}>
-                <AccordionTrigger className="text-left font-medium">{faq.question}</AccordionTrigger>
-                <AccordionContent>{faq.answer}</AccordionContent>
+              <AccordionItem key={index} value={`item-${index}`} className="border-vibeSecondary/20">
+                <AccordionTrigger className="text-left font-medium text-vibeSecondary">{faq.question}</AccordionTrigger>
+                <AccordionContent className="text-vibeSecondary/70">{faq.answer}</AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>

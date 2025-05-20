@@ -1,6 +1,5 @@
 
 import React from "react";
-import { Card, CardContent } from "@/components/ui/card";
 
 const steps = [
   {
@@ -31,11 +30,11 @@ const steps = [
 
 const HowItWorksSection = () => {
   return (
-    <section id="how-it-works" className="py-20">
+    <section id="how-it-works" className="py-20 bg-vibeDark">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gradient">How It Works</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-vibeSecondary/80 max-w-2xl mx-auto">
             Downloading your favorite videos has never been easier. Follow these simple steps:
           </p>
         </div>
@@ -44,8 +43,8 @@ const HowItWorksSection = () => {
           {steps.map((step, index) => (
             <div key={index} className="flex flex-col items-center">
               <div className="relative mb-6">
-                <div className="absolute -inset-1 bg-gradient-to-r from-vibePrimary to-blue-600 opacity-30 blur-md rounded-[32px]"></div>
-                <div className="relative z-10 rounded-3xl overflow-hidden border-2 border-white/20 shadow-lg w-48 h-auto">
+                <div className="absolute -inset-1 bg-gradient-to-r from-vibeSecondary to-vibeAccent opacity-20 blur-md rounded-[32px]"></div>
+                <div className="relative z-10 rounded-3xl overflow-hidden border-2 border-vibeSecondary/20 shadow-lg w-48 h-auto">
                   <img 
                     src={step.image} 
                     alt={step.title} 
@@ -55,11 +54,11 @@ const HowItWorksSection = () => {
               </div>
               
               <div className="text-center">
-                <div className="bg-vibePrimary text-white text-sm font-bold rounded-full w-8 h-8 flex items-center justify-center mx-auto mb-3">
+                <div className="bg-vibeSecondary text-vibeDark text-sm font-bold rounded-full w-8 h-8 flex items-center justify-center mx-auto mb-3">
                   {step.number}
                 </div>
-                <h3 className="text-xl font-bold mb-2">{step.title}</h3>
-                <p className="text-gray-600">{step.description}</p>
+                <h3 className="text-xl font-bold mb-2 text-vibeSecondary">{step.title}</h3>
+                <p className="text-vibeSecondary/70">{step.description}</p>
               </div>
             </div>
           ))}

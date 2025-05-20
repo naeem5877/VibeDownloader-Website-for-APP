@@ -52,19 +52,32 @@
   }
   
   .text-gradient {
-    @apply bg-gradient-to-r from-vibePrimary to-blue-700 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-vibeSecondary to-vibeAccent bg-clip-text text-transparent;
   }
   
   .glass-card {
-    @apply bg-white/80 backdrop-blur-sm shadow-lg border border-white/20 rounded-2xl;
+    @apply bg-white/10 backdrop-blur-sm shadow-lg border border-white/10 rounded-2xl;
   }
   
   .glass-card-dark {
-    @apply bg-vibeDark/80 backdrop-blur-sm shadow-lg border border-white/10 rounded-2xl text-white;
+    @apply bg-vibeDark/90 backdrop-blur-sm shadow-lg border border-vibeSecondary/10 rounded-2xl text-white;
   }
   
   .bg-noise {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%239C92AC' fill-opacity='0.05' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+  }
+
+  .premium-button {
+    @apply relative overflow-hidden bg-vibeDark text-vibeSecondary border border-vibeSecondary/30 hover:border-vibeSecondary/60 hover:shadow-lg transition-all duration-300;
+  }
+  
+  .premium-button::before {
+    content: '';
+    @apply absolute inset-0 bg-silver-gradient opacity-0 hover:opacity-10 transition-opacity duration-300;
+  }
+
+  .shimmer {
+    @apply bg-gradient-to-r from-transparent via-vibeSecondary/10 to-transparent bg-[length:500px_100%] animate-shimmer;
   }
 }
 
@@ -78,13 +91,13 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-gray-100;
+  @apply bg-vibeDark;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-vibePrimary rounded-full;
+  @apply bg-vibeSecondary rounded-full;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-blue-700;
+  @apply bg-vibeAccent;
 }

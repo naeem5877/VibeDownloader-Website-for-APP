@@ -25,10 +25,11 @@ export default {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-        vibePrimary: "#4361EE", // Vibrant blue from screenshots
-        vibeRed: "#FF3030", // App's red accent
-        vibeDark: "#1A1A1A", // Dark background
-        vibeGray: "#303030", // Lighter dark background
+        vibePrimary: "#222222", // Dark primary
+        vibeSecondary: "#C8C8C9", // Silver
+        vibeAccent: "#888888", // Lighter silver
+        vibeDark: "#111111", // Darker black
+        vibeGray: "#333333", // Dark gray
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -83,6 +84,10 @@ export default {
         "slide-up": {
           "0%": { transform: "translateY(20px)", opacity: "0" },
           "100%": { transform: "translateY(0)", opacity: "1" },
+        },
+        "shimmer": {
+          "0%": { backgroundPosition: "-500px 0" },
+          "100%": { backgroundPosition: "500px 0" },
         }
       },
       animation: {
@@ -91,10 +96,12 @@ export default {
         "float": "float 5s ease-in-out infinite",
         "pulse-slow": "pulse-slow 3s ease-in-out infinite",
         "slide-up": "slide-up 0.6s ease-out forwards",
+        "shimmer": "shimmer 2s infinite linear",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "hero-pattern": "linear-gradient(120deg, #4361EE 0%, #3A56D4 100%)",
+        "hero-pattern": "linear-gradient(120deg, #111111 0%, #222222 100%)",
+        "silver-gradient": "linear-gradient(120deg, #C8C8C9 0%, #9F9EA1 100%)",
       },
     },
   },
