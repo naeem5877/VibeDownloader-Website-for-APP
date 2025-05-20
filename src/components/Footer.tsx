@@ -15,7 +15,7 @@ const Footer = () => {
           <div className="col-span-1">
             <div className="flex items-center gap-3 mb-6">
               <img 
-                src="/lovable-uploads/8031c0f7-2701-4cb3-a727-dc735c0c47b9.png" 
+                src="/images/8031c0f7-2701-4cb3-a727-dc735c0c47b9.png" 
                 alt="VibeDownloader Logo" 
                 className="w-12 h-12"
               />
@@ -60,9 +60,8 @@ const Footer = () => {
           <div className="col-span-1">
             <h3 className="font-bold text-xl mb-6">Legal</h3>
             <ul className="space-y-4">
-              <li><a href="#" className="text-vibeSecondary/70 hover:text-vibeSecondary transition-colors text-lg">Privacy Policy</a></li>
-              <li><a href="#" className="text-vibeSecondary/70 hover:text-vibeSecondary transition-colors text-lg">Terms of Use</a></li>
-              <li><a href="#" className="text-vibeSecondary/70 hover:text-vibeSecondary transition-colors text-lg">DMCA</a></li>
+              <li><a href="/privacy-policy" className="text-vibeSecondary/70 hover:text-vibeSecondary transition-colors text-lg">Privacy Policy</a></li>
+              <li><a href="/terms-of-use" className="text-vibeSecondary/70 hover:text-vibeSecondary transition-colors text-lg">Terms of Use</a></li>
             </ul>
           </div>
           

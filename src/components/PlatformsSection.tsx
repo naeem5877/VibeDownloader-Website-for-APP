@@ -1,4 +1,3 @@
-
 import React from "react";
 
 const platforms = [
@@ -24,7 +23,7 @@ const platforms = [
   },
   {
     name: "TikTok",
-    icon: "https://cdn-icons-png.flaticon.com/512/3938/3938074.png",
+    icon: "https://static.wikia.nocookie.net/logopedia/images/2/27/TikTok_old_app_icon.svg",
     color: "#070707",
     features: [
       "Download TikToks without watermark",
@@ -91,7 +90,7 @@ const PlatformsSection = () => {
                     <img 
                       src={platform.icon} 
                       alt={platform.name} 
-                      className="w-10 h-10 invert"
+                      className="w-10 h-10"
                     />
                   </div>
                   <h3 className="text-2xl font-bold text-vibeSecondary">{platform.name}</h3>

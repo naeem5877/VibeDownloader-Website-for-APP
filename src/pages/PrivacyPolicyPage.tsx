@@ -1,4 +1,3 @@
-
 import React from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -30,22 +29,44 @@ const PrivacyPolicyPage = () => {
                   At VibeDownloader, we take your privacy seriously. We believe in transparency and are committed to being upfront about our data practices.
                 </p>
                 <p className="text-vibeSecondary/80">
-                  Our application is designed with privacy in mind. We utilize API calls to fetch data for downloading videos but do not store any user information or track user activity.
+                  Our application is designed with privacy in mind. We utilize API calls to fetch data for downloading videos but only collect minimal information needed to improve our service.
+                </p>
+              </section>
+              
+              <section>
+                <h2 className="text-2xl font-bold mb-4 text-vibeSecondary">Website Analytics</h2>
+                <p className="text-vibeSecondary/80 mb-4">
+                  We use Google Analytics to understand how visitors interact with our website. This helps us improve our service and create a better experience for you.
+                </p>
+                <p className="text-vibeSecondary/80 mb-4">
+                  Google Analytics may collect:
+                </p>
+                <ul className="list-disc pl-6 space-y-2 text-vibeSecondary/80">
+                  <li>Anonymous usage data such as pages visited</li>
+                  <li>Time spent on the website</li>
+                  <li>General geographic location (country/city level only)</li>
+                  <li>Device type and browser information</li>
+                </ul>
+                <p className="text-vibeSecondary/80 mt-4">
+                  This information is collected using cookies and is used in an aggregated, anonymous form. We do not use this data to personally identify individual users.
+                </p>
+                <p className="text-vibeSecondary/80 mt-4">
+                  You can opt out of Google Analytics tracking by using browser extensions like Google Analytics Opt-out Browser Add-on or by enabling Do Not Track in your browser settings.
                 </p>
               </section>
               
               <section>
                 <h2 className="text-2xl font-bold mb-4 text-vibeSecondary">Information We Don't Collect</h2>
                 <p className="text-vibeSecondary/80 mb-4">
-                  VibeDownloader does not collect, store, or process:
+                  Beyond the anonymous analytics data, VibeDownloader does not collect, store, or process:
                 </p>
                 <ul className="list-disc pl-6 space-y-2 text-vibeSecondary/80">
                   <li>Personal identification information (name, email, phone number)</li>
-                  <li>Device information or unique device identifiers</li>
+                  <li>Unique device identifiers</li>
                   <li>Browsing history or search queries</li>
                   <li>Content of videos or media that you download</li>
                   <li>Information about your social media accounts</li>
-                  <li>Location data</li>
+                  <li>Precise location data</li>
                 </ul>
               </section>
               
@@ -62,21 +83,21 @@ const PrivacyPolicyPage = () => {
                   <li>The API returns information about the media (available formats, quality options, etc.)</li>
                   <li>This information is displayed to you to select your preferred download options</li>
                   <li>Once you initiate the download, the content is transferred directly to your device</li>
-                  <li>No logs or records of your downloads are maintained on our servers</li>
+                  <li>No logs or records of your specific downloads are maintained on our servers</li>
                 </ul>
               </section>
               
               <section>
                 <h2 className="text-2xl font-bold mb-4 text-vibeSecondary">Data Security</h2>
                 <p className="text-vibeSecondary/80">
-                  Since we don't collect user data, there's minimal risk of data breaches or unauthorized access to personal information. The API requests are made securely using HTTPS encryption to protect the integrity of the data being transferred.
+                  We take reasonable measures to protect the limited data we collect. The API requests are made securely using HTTPS encryption to protect the integrity of the data being transferred.
                 </p>
               </section>
               
               <section>
                 <h2 className="text-2xl font-bold mb-4 text-vibeSecondary">Third-Party Services</h2>
                 <p className="text-vibeSecondary/80">
-                  VibeDownloader does not integrate with third-party analytics, advertising, or tracking services. We do not sell, trade, or otherwise transfer your information to outside parties.
+                  Apart from Google Analytics, VibeDownloader does not integrate with other third-party analytics, advertising, or tracking services. We do not sell, trade, or otherwise transfer your information to outside parties.
                 </p>
               </section>
               
