@@ -1,7 +1,8 @@
 
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Download } from "lucide-react";
+import { Download, FileText, Shield } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -47,7 +48,9 @@ const Header = () => {
           <a href="#features" className="font-medium text-vibeSecondary/80 hover:text-vibeSecondary transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-vibeSecondary/40 after:origin-bottom-right after:scale-x-0 hover:after:scale-x-100 hover:after:origin-bottom-left after:transition-transform after:duration-300">Features</a>
           <a href="#how-it-works" className="font-medium text-vibeSecondary/80 hover:text-vibeSecondary transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-vibeSecondary/40 after:origin-bottom-right after:scale-x-0 hover:after:scale-x-100 hover:after:origin-bottom-left after:transition-transform after:duration-300">How It Works</a>
           <a href="#platforms" className="font-medium text-vibeSecondary/80 hover:text-vibeSecondary transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-vibeSecondary/40 after:origin-bottom-right after:scale-x-0 hover:after:scale-x-100 hover:after:origin-bottom-left after:transition-transform after:duration-300">Platforms</a>
+          <Link to="/blog" className="font-medium text-vibeSecondary/80 hover:text-vibeSecondary transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-vibeSecondary/40 after:origin-bottom-right after:scale-x-0 hover:after:scale-x-100 hover:after:origin-bottom-left after:transition-transform after:duration-300">Blog</Link>
           <a href="#faq" className="font-medium text-vibeSecondary/80 hover:text-vibeSecondary transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-vibeSecondary/40 after:origin-bottom-right after:scale-x-0 hover:after:scale-x-100 hover:after:origin-bottom-left after:transition-transform after:duration-300">FAQ</a>
+          <Link to="/privacy-policy" className="font-medium text-vibeSecondary/80 hover:text-vibeSecondary transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-vibeSecondary/40 after:origin-bottom-right after:scale-x-0 hover:after:scale-x-100 hover:after:origin-bottom-left after:transition-transform after:duration-300">Privacy</Link>
         </nav>
 
         {/* Mobile menu button */}
@@ -104,6 +107,13 @@ const Header = () => {
               >
                 Platforms
               </a>
+              <Link 
+                to="/blog" 
+                className="font-medium text-vibeSecondary/80 hover:text-vibeSecondary transition-colors py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Blog
+              </Link>
               <a 
                 href="#faq" 
                 className="font-medium text-vibeSecondary/80 hover:text-vibeSecondary transition-colors py-2"
@@ -111,6 +121,13 @@ const Header = () => {
               >
                 FAQ
               </a>
+              <Link 
+                to="/privacy-policy" 
+                className="font-medium text-vibeSecondary/80 hover:text-vibeSecondary transition-colors py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Privacy
+              </Link>
               <Button className="premium-button glow-effect w-full" asChild>
                 <a 
                   href="https://github.com/naeem5877/VibeDownloader-Android/releases/download/download/VibeDownloader.apk"

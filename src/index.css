@@ -1,4 +1,6 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -40,6 +42,7 @@
 @layer base {
   * {
     @apply border-border;
+    font-family: 'Montserrat', sans-serif;
   }
   
   body {
@@ -52,7 +55,7 @@
   }
   
   .text-gradient {
-    @apply bg-gradient-to-r from-vibeSecondary to-vibeAccent bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-vibeSecondary via-vibeSecondary to-vibeAccent bg-clip-text text-transparent;
   }
   
   .glass-card {
@@ -60,7 +63,7 @@
   }
   
   .glass-card-dark {
-    @apply bg-vibeDark/90 backdrop-blur-sm shadow-lg border border-vibeSecondary/10 rounded-2xl text-white;
+    @apply bg-black/30 backdrop-blur-sm shadow-lg border border-vibeSecondary/10 rounded-2xl text-white;
   }
   
   .bg-noise {
@@ -79,6 +82,53 @@
   .shimmer {
     @apply bg-gradient-to-r from-transparent via-vibeSecondary/10 to-transparent bg-[length:500px_100%] animate-shimmer;
   }
+  
+  .neo-card {
+    @apply relative bg-gradient-to-br from-zinc-900 to-zinc-950 border border-zinc-800 rounded-xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.12)] backdrop-blur-sm;
+  }
+  
+  .neo-card::before {
+    content: '';
+    @apply absolute top-0 left-0 w-full h-full bg-gradient-to-br from-vibeSecondary/5 to-transparent rounded-xl -z-10 blur-xl opacity-60;
+  }
+  
+  .glow-effect {
+    @apply relative;
+  }
+  
+  .glow-effect::after {
+    content: '';
+    @apply absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-r from-vibeSecondary/20 to-vibeAccent/20 rounded-xl blur-xl opacity-0 transition-opacity duration-300 -z-10;
+  }
+  
+  .glow-effect:hover::after {
+    @apply opacity-100;
+  }
+  
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-xl;
+  }
+  
+  /* Blog content styling */
+  .blog-content h2 {
+    @apply text-2xl font-bold mb-4 text-vibeSecondary;
+  }
+  
+  .blog-content h3 {
+    @apply text-xl font-semibold mb-3 text-vibeSecondary;
+  }
+  
+  .blog-content p {
+    @apply mb-4 leading-relaxed;
+  }
+  
+  .blog-content ul {
+    @apply list-disc pl-6 space-y-2 mb-4;
+  }
+  
+  .blog-content li {
+    @apply leading-relaxed;
+  }
 }
 
 html {
@@ -95,9 +145,36 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-vibeSecondary rounded-full;
+  @apply bg-vibeSecondary/40 rounded-full;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-vibeAccent;
+  @apply bg-vibeAccent/60;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 4s ease-in-out infinite;
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.perspective-tilt {
+  transform: perspective(1000px) rotateY(-5deg) rotateX(5deg);
+  transition: all 0.5s ease;
+}
+
+.perspective-tilt:hover {
+  transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
 }

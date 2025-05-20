@@ -91,7 +91,7 @@ const PlatformsSection = () => {
                     <img 
                       src={platform.icon} 
                       alt={platform.name} 
-                      className="w-10 h-10" 
+                      className="w-10 h-10 invert"
                     />
                   </div>
                   <h3 className="text-2xl font-bold text-vibeSecondary">{platform.name}</h3>
