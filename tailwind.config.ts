@@ -25,11 +25,11 @@ export default {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-        vibePrimary: "#222222", // Dark primary
-        vibeSecondary: "#C8C8C9", // Silver
-        vibeAccent: "#888888", // Lighter silver
-        vibeDark: "#111111", // Darker black
-        vibeGray: "#333333", // Dark gray
+        vibePrimary: "#0a0a0a", // Darker primary
+        vibeSecondary: "#c0c0c0", // Silver
+        vibeAccent: "#909090", // Darker silver
+        vibeDark: "#050505", // Near black
+        vibeGray: "#202020", // Dark gray
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -79,7 +79,7 @@ export default {
         },
         "pulse-slow": {
           "0%, 100%": { opacity: "1" },
-          "50%": { opacity: "0.8" },
+          "50%": { opacity: "0.7" },
         },
         "slide-up": {
           "0%": { transform: "translateY(20px)", opacity: "0" },
@@ -88,20 +88,32 @@ export default {
         "shimmer": {
           "0%": { backgroundPosition: "-500px 0" },
           "100%": { backgroundPosition: "500px 0" },
+        },
+        "rotate-slow": {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
         }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "float": "float 5s ease-in-out infinite",
+        "float": "float 6s ease-in-out infinite",
         "pulse-slow": "pulse-slow 3s ease-in-out infinite",
         "slide-up": "slide-up 0.6s ease-out forwards",
         "shimmer": "shimmer 2s infinite linear",
+        "rotate-slow": "rotate-slow 12s linear infinite",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "hero-pattern": "linear-gradient(120deg, #111111 0%, #222222 100%)",
-        "silver-gradient": "linear-gradient(120deg, #C8C8C9 0%, #9F9EA1 100%)",
+        "hero-pattern": "linear-gradient(to bottom, #050505 0%, #0a0a0a 100%)",
+        "silver-gradient": "linear-gradient(120deg, #c0c0c0 0%, #909090 100%)",
+        "premium-dark": "radial-gradient(circle at 50% 0%, rgba(50, 50, 50, 0.15), rgba(0, 0, 0, 0) 70%)",
+        "glow-conic": "conic-gradient(from 180deg at 50% 50%, #c0c0c0 0deg, #050505 360deg)",
+      },
+      boxShadow: {
+        'premium': '0 10px 30px -5px rgba(0, 0, 0, 0.3)',
+        'premium-lg': '0 10px 40px -5px rgba(0, 0, 0, 0.5)',
+        'premium-inner': 'inset 0 1px 1px 0 rgba(255, 255, 255, 0.1)',
       },
     },
   },

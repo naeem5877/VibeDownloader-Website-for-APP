@@ -30,38 +30,48 @@ const steps = [
 
 const HowItWorksSection = () => {
   return (
-    <section id="how-it-works" className="py-20 bg-vibeDark">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gradient">How It Works</h2>
-          <p className="text-lg text-vibeSecondary/80 max-w-2xl mx-auto">
+    <section id="how-it-works" className="py-24 bg-vibeDark relative overflow-hidden">
+      <div className="absolute inset-0 bg-noise opacity-20"></div>
+      <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-vibePrimary to-transparent"></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gradient inline-block">How It Works</h2>
+          <div className="h-1 w-32 bg-gradient-to-r from-vibeSecondary to-vibeAccent mx-auto opacity-50 rounded-full"></div>
+          <p className="text-xl mt-6 text-vibeSecondary/80 max-w-2xl mx-auto">
             Downloading your favorite videos has never been easier. Follow these simple steps:
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {steps.map((step, index) => (
-            <div key={index} className="flex flex-col items-center">
-              <div className="relative mb-6">
-                <div className="absolute -inset-1 bg-gradient-to-r from-vibeSecondary to-vibeAccent opacity-20 blur-md rounded-[32px]"></div>
-                <div className="relative z-10 rounded-3xl overflow-hidden border-2 border-vibeSecondary/20 shadow-lg w-48 h-auto">
-                  <img 
-                    src={step.image} 
-                    alt={step.title} 
-                    className="w-full h-auto"
-                  />
+        <div className="flex flex-col md:flex-row items-center justify-center">
+          <div className="relative">
+            <div className="hidden md:block absolute top-1/2 left-[3.5rem] right-[3.5rem] h-1 bg-gradient-to-r from-transparent via-vibeSecondary/30 to-transparent -translate-y-1/2 z-0"></div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16">
+              {steps.map((step, index) => (
+                <div key={index} className="flex flex-col items-center relative">
+                  <div className="relative z-10 mb-8">
+                    <div className="absolute -inset-3 bg-gradient-to-r from-vibeSecondary/20 to-vibeAccent/20 opacity-70 blur-xl rounded-full"></div>
+                    <div className="relative overflow-hidden rounded-2xl border-2 border-vibeSecondary/20 shadow-premium">
+                      <img 
+                        src={step.image} 
+                        alt={step.title} 
+                        className="w-56 h-auto"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-vibeDark/80 via-transparent to-transparent"></div>
+                    </div>
+                  </div>
+                  
+                  <div className="text-center relative z-10">
+                    <div className="bg-gradient-to-r from-vibeSecondary to-vibeAccent text-vibeDark text-sm font-bold rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 shadow-lg">
+                      {step.number}
+                    </div>
+                    <h3 className="text-2xl font-bold mb-3 text-vibeSecondary">{step.title}</h3>
+                    <p className="text-vibeSecondary/70 text-lg">{step.description}</p>
+                  </div>
                 </div>
-              </div>
-              
-              <div className="text-center">
-                <div className="bg-vibeSecondary text-vibeDark text-sm font-bold rounded-full w-8 h-8 flex items-center justify-center mx-auto mb-3">
-                  {step.number}
-                </div>
-                <h3 className="text-xl font-bold mb-2 text-vibeSecondary">{step.title}</h3>
-                <p className="text-vibeSecondary/70">{step.description}</p>
-              </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </section>

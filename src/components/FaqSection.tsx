@@ -36,21 +36,25 @@ const faqs = [
 
 const FaqSection = () => {
   return (
-    <section id="faq" className="py-20 bg-vibePrimary">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gradient">Frequently Asked Questions</h2>
-          <p className="text-lg text-vibeSecondary/80 max-w-2xl mx-auto">
+    <section id="faq" className="py-24 bg-vibePrimary relative overflow-hidden">
+      <div className="absolute inset-0 bg-noise opacity-20"></div>
+      <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-vibeDark to-transparent opacity-50"></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gradient inline-block">Frequently Asked Questions</h2>
+          <div className="h-1 w-32 bg-gradient-to-r from-vibeSecondary to-vibeAccent mx-auto opacity-50 rounded-full"></div>
+          <p className="text-xl mt-6 text-vibeSecondary/80 max-w-2xl mx-auto">
             Got questions? We've got answers. Here are some of the most common questions about VibeDownloader.
           </p>
         </div>
         
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-3xl mx-auto neo-card">
           <Accordion type="single" collapsible className="w-full">
             {faqs.map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`} className="border-vibeSecondary/20">
-                <AccordionTrigger className="text-left font-medium text-vibeSecondary">{faq.question}</AccordionTrigger>
-                <AccordionContent className="text-vibeSecondary/70">{faq.answer}</AccordionContent>
+              <AccordionItem key={index} value={`item-${index}`} className="border-vibeSecondary/10 px-2">
+                <AccordionTrigger className="text-left font-medium text-vibeSecondary text-lg py-5">{faq.question}</AccordionTrigger>
+                <AccordionContent className="text-vibeSecondary/70 text-lg pb-5">{faq.answer}</AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
