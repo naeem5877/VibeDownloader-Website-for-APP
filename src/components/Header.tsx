@@ -32,7 +32,7 @@ const SECONDARY_NAV_ITEMS: NavItemType[] = [
   { label: "Privacy", href: "/privacy-policy", icon: <Shield className="w-4 h-4" /> },
 ];
 
-const DOWNLOAD_LINK = "https://github.com/naeem5877/VibeDownloader-Android/releases/download/download/VibeDownloader.apk";
+const DOWNLOAD_LINK = "https://github.com/naeem5877/VibeDownloader-Website-for-APP/releases/download/vibedownloader/VibeDownloader.apk";
 
 // NavLink component with improved styling and behavior
 const NavLink: React.FC<NavLinkProps> = ({ item, onClick, variant, active }) => {
