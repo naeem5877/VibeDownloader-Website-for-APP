@@ -23,7 +23,7 @@ const CtaSection = () => {
             
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" className="premium-button glow-effect group" asChild>
-                <a href="https://github.com/naeem5877/VibeDownloader-Android/releases/download/download/VibeDownloader.apk" className="px-8 py-6 text-lg whitespace-nowrap">
+                <a href="https://github.com/naeem5877/VibeDownloader-Website-for-APP/releases/download/vibedownloader/VibeDownloader.apk" className="px-8 py-6 text-lg whitespace-nowrap">
                   <Download className="mr-3 h-5 w-5 group-hover:animate-bounce" /> Download APK
                 </a>
               </Button>
