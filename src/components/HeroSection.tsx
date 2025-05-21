@@ -41,7 +41,7 @@ const HeroSection = () => {
                 asChild
               >
                 <a 
-                  href="https://github.com/naeem5877/VibeDownloader-Android/releases/download/download/VibeDownloader.apk" 
+                  href="https://github.com/naeem5877/VibeDownloader-Website-for-APP/releases/download/vibedownloader/VibeDownloader.apk" 
                   className="flex items-center text-lg font-medium"
                 >
                   <span className="relative z-10 flex items-center">
