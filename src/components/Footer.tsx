@@ -69,7 +69,7 @@ const Footer = () => {
             <h3 className="font-bold text-xl mb-6">Download</h3>
             <p className="text-vibeSecondary/70 mb-6 text-lg">Get VibeDownloader for Android</p>
             <Button className="premium-button glow-effect w-full group" asChild>
-              <a href="https://github.com/naeem5877/VibeDownloader-Android/releases/download/download/VibeDownloader.apk" className="py-6 text-lg">
+              <a href="https://github.com/naeem5877/VibeDownloader-Website-for-APP/releases/download/vibedownloader/VibeDownloader.apk" className="py-6 text-lg">
                 <Download className="mr-2 h-5 w-5 group-hover:animate-bounce" /> Download APK
               </a>
             </Button>
