@@ -2,5 +2,7 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://app.vibedownloader.me/sitemap.xml
+# Include both VibeDownloader and Vibe Downloader in searches
+# Premium video downloader for multiple social platforms
 
+Sitemap: https://app.vibedownloader.me/sitemap.xml
