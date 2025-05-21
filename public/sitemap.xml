@@ -3,8 +3,62 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://app.vibedownloader.me/</loc>
-    <lastmod>2025-05-20</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2025-05-21</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://app.vibedownloader.me/blog</loc>
+    <lastmod>2025-05-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://app.vibedownloader.me/blog/how-to-download</loc>
+    <lastmod>2025-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://app.vibedownloader.me/blog/ad-free-experience</loc>
+    <lastmod>2025-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://app.vibedownloader.me/blog/modern-design</loc>
+    <lastmod>2025-05-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://app.vibedownloader.me/blog/download-formats</loc>
+    <lastmod>2025-05-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://app.vibedownloader.me/blog/privacy-first</loc>
+    <lastmod>2025-05-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://app.vibedownloader.me/blog/platform-guide</loc>
+    <lastmod>2025-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://app.vibedownloader.me/privacy-policy</loc>
+    <lastmod>2025-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://app.vibedownloader.me/terms-of-use</loc>
+    <lastmod>2025-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
 </urlset>
