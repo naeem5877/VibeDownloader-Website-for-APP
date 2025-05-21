@@ -2,15 +2,35 @@ import React from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Shield } from "lucide-react";
+import { motion } from "framer-motion";
+
+const contentVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: { duration: 0.6 }
+  }
+};
 
 const PrivacyPolicyPage = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-vibeDark text-vibeSecondary">
+    <motion.div 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      className="min-h-screen flex flex-col bg-vibeDark text-vibeSecondary"
+    >
       <Header />
       <main className="flex-grow pt-32 pb-24">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
+            <motion.div 
+              initial="hidden"
+              animate="visible"
+              variants={contentVariants}
+              className="text-center mb-12"
+            >
               <div className="flex justify-center mb-6">
                 <div className="w-20 h-20 rounded-full bg-vibeSecondary/10 flex items-center justify-center">
                   <Shield className="w-10 h-10 text-vibeSecondary" />
@@ -20,9 +40,14 @@ const PrivacyPolicyPage = () => {
               <p className="text-xl text-vibeSecondary/80 max-w-3xl mx-auto">
                 We respect your privacy and are committed to protecting your personal data
               </p>
-            </div>
+            </motion.div>
             
-            <div className="neo-card p-8 md:p-12 rounded-xl space-y-8">
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="neo-card p-8 md:p-12 rounded-xl space-y-8"
+            >
               <section>
                 <h2 className="text-2xl font-bold mb-4 text-vibeSecondary">Our Approach to Privacy</h2>
                 <p className="text-vibeSecondary/80 mb-4">
@@ -117,12 +142,12 @@ const PrivacyPolicyPage = () => {
                   If you have any questions about our Privacy Policy, please contact us at privacy@vibedownloader.me.
                 </p>
               </section>
-            </div>
+            </motion.div>
           </div>
         </div>
       </main>
       <Footer />
-    </div>
+    </motion.div>
   );
 };
 

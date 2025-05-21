@@ -1,4 +1,6 @@
+
 import React from "react";
+import { motion } from "framer-motion";
 
 const platforms = [
   {
@@ -63,6 +65,27 @@ const platforms = [
   }
 ];
 
+const container = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
+};
+
+const item = {
+  hidden: { x: -20, opacity: 0 },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.5
+    }
+  }
+};
+
 const PlatformsSection = () => {
   return (
     <section id="platforms" className="py-24 bg-vibePrimary relative overflow-hidden">
@@ -70,18 +93,31 @@ const PlatformsSection = () => {
       <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-vibeDark to-transparent opacity-50"></div>
       
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
           <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gradient inline-block">Supported Platforms</h2>
           <div className="h-1 w-32 bg-gradient-to-r from-vibeSecondary to-vibeAccent mx-auto opacity-50 rounded-full"></div>
           <p className="text-xl mt-6 text-vibeSecondary/80 max-w-2xl mx-auto">
             Download content from all major social media platforms with ease
           </p>
-        </div>
+        </motion.div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <motion.div 
+          variants={container}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
           {platforms.map((platform, index) => (
-            <div 
+            <motion.div 
               key={index} 
+              variants={item}
               className="neo-card hover-lift overflow-hidden"
             >
               <div className="p-8">
@@ -104,9 +140,9 @@ const PlatformsSection = () => {
                   ))}
                 </ul>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

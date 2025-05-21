@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { FileText } from "lucide-react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const blogPosts = [
   {
@@ -51,60 +52,98 @@ const blogPosts = [
   }
 ];
 
+const container = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
+};
+
+const item = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.5
+    }
+  }
+};
+
 const BlogPage = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-vibeDark text-vibeSecondary">
+    <motion.div 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.6 }}
+      className="min-h-screen flex flex-col bg-vibeDark text-vibeSecondary"
+    >
       <Header />
       <main className="flex-grow pt-32 pb-24">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gradient inline-block">VibeDownloader Blog</h1>
             <div className="h-1 w-48 bg-gradient-to-r from-vibeSecondary to-vibeAccent mx-auto opacity-50 rounded-full"></div>
             <p className="text-xl mt-6 text-vibeSecondary/80 max-w-3xl mx-auto">
               Learn more about our features, how to use VibeDownloader effectively, and stay updated with the latest improvements.
             </p>
-          </div>
+          </motion.div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <motion.div 
+            variants={container}
+            initial="hidden"
+            animate="visible"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          >
             {blogPosts.map((post) => (
-              <Link key={post.id} to={`/blog/${post.id}`}>
-                <Card className="neo-card hover-lift overflow-hidden transition-all duration-300 h-full bg-zinc-900 border-zinc-800">
-                  <CardContent className="p-6">
-                    <div className="flex flex-col h-full">
-                      <div className="w-full h-48 relative mb-6 rounded-lg overflow-hidden">
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent z-10"></div>
-                        <div className="w-full h-full bg-vibeGray flex items-center justify-center">
-                          <img 
-                            src={post.image} 
-                            alt={post.title} 
-                            className="w-24 h-24 invert opacity-70"
-                          />
+              <motion.div key={post.id} variants={item}>
+                <Link to={`/blog/${post.id}`}>
+                  <Card className="neo-card hover-lift overflow-hidden transition-all duration-300 h-full bg-zinc-900 border-zinc-800">
+                    <CardContent className="p-6">
+                      <div className="flex flex-col h-full">
+                        <div className="w-full h-48 relative mb-6 rounded-lg overflow-hidden">
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent z-10"></div>
+                          <div className="w-full h-full bg-vibeGray flex items-center justify-center">
+                            <img 
+                              src={post.image} 
+                              alt={post.title} 
+                              className="w-24 h-24 invert opacity-70"
+                            />
+                          </div>
+                        </div>
+                        <div className="flex items-center text-vibeSecondary/60 text-sm mb-2">
+                          <FileText className="w-4 h-4 mr-2" />
+                          <span>{post.date}</span>
+                        </div>
+                        <h2 className="text-2xl font-bold mb-3 text-vibeSecondary">{post.title}</h2>
+                        <p className="text-vibeSecondary/70 flex-grow">{post.description}</p>
+                        <div className="mt-6 pt-4 border-t border-vibeSecondary/10">
+                          <span className="text-vibeSecondary/60 text-sm hover:text-vibeSecondary transition-colors inline-flex items-center">
+                            Read More 
+                            <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg>
+                          </span>
                         </div>
                       </div>
-                      <div className="flex items-center text-vibeSecondary/60 text-sm mb-2">
-                        <FileText className="w-4 h-4 mr-2" />
-                        <span>{post.date}</span>
-                      </div>
-                      <h2 className="text-2xl font-bold mb-3 text-vibeSecondary">{post.title}</h2>
-                      <p className="text-vibeSecondary/70 flex-grow">{post.description}</p>
-                      <div className="mt-6 pt-4 border-t border-vibeSecondary/10">
-                        <span className="text-vibeSecondary/60 text-sm hover:text-vibeSecondary transition-colors inline-flex items-center">
-                          Read More 
-                          <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                          </svg>
-                        </span>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </Link>
+                    </CardContent>
+                  </Card>
+                </Link>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </main>
       <Footer />
-    </div>
+    </motion.div>
   );
 };
 
